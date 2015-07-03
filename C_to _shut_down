@@ -1,0 +1,45 @@
+#include "stdafx.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+	char cmd[20] = "shutdowm -s -t";
+	char t[5] = "0";
+	int c;
+
+	system("title C to shut down");
+	system("mode con cols=48 lines=20");
+	system("color f2");
+	system("date /t");
+	system("time /t");
+
+	printf("C to shut down\n");
+	printf("1. shut down in 10 mins\n");
+	printf("2. shut down\n");
+	printf("3. log off\n");
+	printf("4. quit\n");
+
+	scanf("%d",&c);
+	switch(c){
+	case 1:
+		scanf("%c",t);
+		system(strcat(cmd,t));
+		break;
+	case 2:
+		system("shutdown -p");
+		break;
+	case 3:
+		system("shutdown -l");
+		break;
+	case 4:
+		break;
+	default:
+		printf("Error!\n");
+		break;
+	}
+	system("pause");
+
+	return 0;
+
+}
